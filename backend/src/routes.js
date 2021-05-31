@@ -1,9 +1,9 @@
-const express = require("express");
+const { Router } = require("express");
 
-const routes = express.Router();
+const DevController = require("./controllers/DevController");
 
-routes.get("/", (request, response) => {
-  return response.json({ message: "Hello World" });
-});
+const routes = Router();
+
+routes.post("/devs", DevController.create);
 
 module.exports = routes;
